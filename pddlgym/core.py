@@ -432,6 +432,7 @@ class PDDLEnv(gym.Env):
         """
         if not self._problem_index_fixed:
             self._problem_idx = self.rng.choice(len(self.problems))
+
         self._problem = self.problems[self._problem_idx]
 
         initial_state = State(frozenset(self._problem.initial_state),
