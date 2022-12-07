@@ -55,6 +55,15 @@
 
 (:goal (and
     (at j)
+    (not (at a))
+    (not (at b))
+    (not (at c))
+    (not (at d))
+    (not (at e))
+    (not (at f))
+    (not (at g))
+    (not (at h))
+    (not (at i))
 ))
 
 )

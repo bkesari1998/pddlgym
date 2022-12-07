@@ -10,6 +10,7 @@
 
 (:predicates
     (at ?l - location ) ; agent is at location l
+    (clear ?l - location ) ; agent is not at location l
     (left ?l1 - location ?l2 - location) ; l1 is left of l2
     (right ?l1 - location ?l2 - location) ; l1 is right of l2
     (above ?l1 - location ?l2 - location) ; l1 is above l2
