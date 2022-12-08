@@ -13,6 +13,10 @@
 )
 
 (:init
+    (move_up)
+    (move_down)
+    (move_right)
+    (move_left)
     (at a)
     (not (at b))
     (not (at c))

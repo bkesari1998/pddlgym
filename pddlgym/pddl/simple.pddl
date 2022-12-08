@@ -15,29 +15,53 @@
     (right ?l1 - location ?l2 - location) ; l1 is right of l2
     (above ?l1 - location ?l2 - location) ; l1 is above l2
     (below ?l1 - location ?l2 - location) ; l1 is below l2
+
+    ; auxiliary predicates for non-grounded actions.
+    (move_left)
+    (move_right)
+    (move_up)
+    (move_down)
 )
+
+; (:actions move_left move_right move_up move_down)
 
 (:action move_left
     :parameters (?l1 - location ?l2 - location)
-    :precondition (and (at ?l1) (left ?l2 ?l1))
+    :precondition (and 
+        (at ?l1) 
+        (left ?l2 ?l1)
+        (move_left)
+    )
     :effect (and (not (at ?l1)) (at ?l2))
 )
 
 (:action move_right
     :parameters (?l1 - location ?l2 - location)
-    :precondition (and (at ?l1) (right ?l2 ?l1))
+    :precondition (and 
+        (at ?l1) 
+        (right ?l2 ?l1)
+        (move_right)
+    )
     :effect (and (not (at ?l1)) (at ?l2))
 )
 
 (:action move_up
     :parameters (?l1 - location ?l2 - location)
-    :precondition (and (at ?l1) (above ?l2 ?l1))
+    :precondition (and 
+        (at ?l1) 
+        (above ?l2 ?l1)
+        (move_up)
+    )
     :effect (and (not (at ?l1)) (at ?l2))
 )
 
 (:action move_down
     :parameters (?l1 - location  ?l2 - location)
-    :precondition (and (at ?l1) (below ?l2 ?l1))
+    :precondition (and 
+        (at ?l1) 
+        (below ?l2 ?l1)
+        (move_down)
+    )
     :effect (and (not (at ?l1)) (at ?l2))
 )
 
