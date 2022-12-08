@@ -1,15 +1,15 @@
 (define (problem simple_problem) (:domain simple_domain)
 (:objects 
-    a - location
-    b - location
-    c - location
-    d - location
-    e - location
-    f - location
-    g - location
-    h - location
-    i - location
-    j - location
+    f0-0f - location
+    f0-1f - location
+    f0-2f - location
+    f1-2f - location
+    f2-2f - location
+    f3-2f - location
+    f4-2f - location
+    f5-2f - location
+    f5-3f - location
+    f5-4f - location
 )
 
 (:init
@@ -17,57 +17,58 @@
     (move_down)
     (move_right)
     (move_left)
-    (at a)
-    (not (at b))
-    (not (at c))
-    (not (at d))
-    (not (at e))
-    (not (at f))
-    (not (at g))
-    (not (at h))
-    (not (at i))
-    (not (at j))
+    (at f0-0f)
+    (not (at f0-1f))
+    (not (at f0-2f))
+    (not (at f1-2f))
+    (not (at f2-2f))
+    (not (at f3-2f))
+    (not (at f4-2f))
+    (not (at f5-2f))
+    (not (at f5-3f))
+    (not (at f5-4f))
 
-    (below b a)
-    (above a b)
+    (below f0-1f f0-0f)
+    (above f0-0f f0-1f)
 
-    (below c b)
-    (above b c)
+    (below f0-2f f0-1f)
+    (above f0-1f f0-2f)
 
-    (right d c)
-    (left c d)
+    (right f1-2f f0-2f)
+    (left f0-2f f1-2f)
 
-    (right e d)
-    (left d e)
+    (right f2-2f f1-2f)
+    (left f1-2f f2-2f)
 
-    (right f e)
-    (left e f)
+    (right f3-2f f2-2f)
+    (left f2-2f f3-2f)
 
-    (right g f)
-    (left f g)
+    (right f4-2f f3-2f)
+    (left f3-2f f4-2f)
 
-    (right h g)
-    (left g h)
+    (right f5-2f f4-2f)
+    (left f4-2f f5-2f)
 
-    (below i h)
-    (above h i)
+    (below f5-3f f5-2f)
+    (above f5-2f f5-3f)
 
-    (below j i)
-    (above i j)
+    (below f5-4f f5-3f)
+    (above f5-3f f5-4f)
 
+    (is-goal f5-4f)
 )
 
 (:goal (and
-    (at j)
-    (not (at a))
-    (not (at b))
-    (not (at c))
-    (not (at d))
-    (not (at e))
-    (not (at f))
-    (not (at g))
-    (not (at h))
-    (not (at i))
+    (at f5-4f)
+    (not (at f0-0f))
+    (not (at f0-1f))
+    (not (at f0-2f))
+    (not (at f1-2f))
+    (not (at f2-2f))
+    (not (at f3-2f))
+    (not (at f4-2f))
+    (not (at f5-2f))
+    (not (at f5-3f))
 ))
 
 )

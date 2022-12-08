@@ -17,3 +17,6 @@ from .sar_render_from_string_grid import sar_render_from_string_grid
 from .hiking import render as hiking_render
 from .maze import render as maze_render
 from .navigation import render as navigation_render
+
+# custom
+from .simple import render as simple_render

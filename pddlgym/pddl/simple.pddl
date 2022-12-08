@@ -16,6 +16,7 @@
     (above ?l1 - location ?l2 - location) ; l1 is above l2
     (below ?l1 - location ?l2 - location) ; l1 is below l2
 
+    (is-goal ?l - location) ; goal of the agent, used for rendering
     ; auxiliary predicates for non-grounded actions.
     (move_left)
     (move_right)
@@ -39,7 +40,7 @@
     :parameters (?l1 - location ?l2 - location)
     :precondition (and 
         (at ?l1) 
-        (right ?l2 ?l1)
+        (left ?l1 ?l2)
         (move_right)
     )
     :effect (and (not (at ?l1)) (at ?l2))
@@ -59,7 +60,7 @@
     :parameters (?l1 - location  ?l2 - location)
     :precondition (and 
         (at ?l1) 
-        (below ?l2 ?l1)
+        (above ?l1 ?l2)
         (move_down)
     )
     :effect (and (not (at ?l1)) (at ?l2))
